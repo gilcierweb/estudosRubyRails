@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   get 'welcome/index'
   get 'teste/form'
   get 'teste/index' 
+   get 'ola/index'
   post ':controller(/:action(/:id(.:format)))'
 #match ':controller(/:action(/:id(.:format)))' 
 
@@ -68,4 +70,10 @@ MyApp2::Application.routes.draw do
  match 'inicio', controller: 'restaurantes', action: 'index', via: 'get'
   #match 'inicio' => 'restaurantes#index', via: 'get'
 end
+
+myapp2::Application.routes.draw do
+  match 'ola' => 'ola_mundo#index', via: 'get'
+end
+
 =end
+

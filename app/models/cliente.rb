@@ -1,4 +1,6 @@
 # encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
 class Cliente < ActiveRecord::Base
 	has_many :qualificacoes
 	

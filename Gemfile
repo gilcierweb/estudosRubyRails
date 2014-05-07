@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+LANG="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use mysql as the database for Active Record

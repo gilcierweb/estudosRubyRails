@@ -1,4 +1,6 @@
 # encoding: utf-8
+# encoding: utf-8
+# encoding: utf-8
 class Qualificacao < ActiveRecord::Base
 
 	belongs_to :cliente
