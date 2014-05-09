@@ -1,0 +1,12 @@
+<h2>Editando Restaurante</h2>
+
+<%= form_for @restaurante do |f| %>
+Nome: <%= f.text_field :nome %>
+<br/>
+Endereço: <%= f.text_field :endereco %>
+<br/>
+Especialidade: <%= f.text_field :especialidade %>
+<br/>
+<%= f.submit %>
+<% end %>
+<%= link_to 'Voltar', action: 'index' %>

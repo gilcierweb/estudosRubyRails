@@ -14,30 +14,34 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
       <%= csrf_meta_tags %>
-  </head>
-  <body>
-  <%= render 'layouts/menu'%>
-  	<div class="container">
-  		<div class="row">
-  			<div class="col-md-12">
+    </head>
+    <body>
 
-<%= render 'layouts/banner'%>
-			
-  				<header>
-  					<h1>GilcierWeb Rails</h1>
-  				</header>
+      <%= render 'layouts/menu' %>
+      
+      <div class="container">
+        <div class="row">
+         <div class="col-md-12">
+         
+          <% if current_page?('/') || current_page?(controller: 'welcome')%>
+          <%= render 'layouts/banner' %>
+          <% end%>
 
-  				<%= yield %>
+          <header>
+           <h1>GilcierWeb Rails</h1>
+         </header>
 
-  				<footer>
-  					<p>&copy; GilcierWeb Rails - <%= Time.new.year %> - <a href="http://gilcierweb.com.br" target="_blank">gilcierweb.com.br</a><p>
-  					</footer>
+         <%= yield %>
 
-  				</div>		
-  			</div>
-  		</div>
+         <footer>
+           <p>&copy; GilcierWeb Rails - <%= Time.new.year %> - <a href="http://gilcierweb.com.br" target="_blank">gilcierweb.com.br</a><p>
+           </footer>
 
-  		<!-- Script -->
-  		<%= javascript_include_tag  'application','//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js', 'data-turbolinks-track' => true %>
-  	</body>
-  	</html>
+         </div>		
+       </div>
+     </div>
+
+     <!-- Script -->
+     <%= javascript_include_tag  'application','//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js', 'data-turbolinks-track' => true %>
+   </body>
+   </html>

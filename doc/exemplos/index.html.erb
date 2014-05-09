@@ -1,0 +1,19 @@
+<p>
+	Estou no controller de Restaurantes!
+</p>
+<% nomes = ['joão', 'teste']
+if nomes.empty? %>
+<div class="popup">
+	Nenhum nome
+</div>
+<% else %>
+<div class="listagem">
+	<%= nomes %>
+	<% nomes.each do |nome| %>
+	<li>
+		<%= nome %>
+	</li>
+	<% end %>
+	</ul>
+</div>
+<% end %>
