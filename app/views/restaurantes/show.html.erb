@@ -14,5 +14,5 @@
   <b>Especialidade: </b>
   <%= @restaurante.especialidade %>
 </p>
-<%= link_to 'Editar', action: 'edit', id: @restaurante %>
-<%= link_to 'Voltar', action: 'index' %>
+<%= link_to 'Editar', {action: 'edit', id: @restaurante}, class: "btn btn-primary" %>
+<%= link_to 'Voltar', {action: 'index'} ,class: "btn btn-default"%>

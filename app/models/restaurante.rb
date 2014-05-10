@@ -1,6 +1,4 @@
 # encoding: utf-8
-# encoding: utf-8
-# encoding: utf-8
 class Restaurante < ActiveRecord::Base
 		
 	has_many :qualificacoes
@@ -10,8 +8,8 @@ class Restaurante < ActiveRecord::Base
 	validates_presence_of :endereco, message: "deve ser preenchido"
 	validates_presence_of :especialidade, message: "deve ser preenchido"
 
-	 validates_uniqueness_of :nome, message: "nome já cadastrado"
-    validates_uniqueness_of :endereco, message: "endereço já cadastrado"
+	validates_uniqueness_of :nome, message: "nome já cadastrado"
+  validates_uniqueness_of :endereco, message: "endereço já cadastrado"
 
 	# private:message =>primeira_letra_deve_ser_maiuscula
 	#   errors.add(:nome,

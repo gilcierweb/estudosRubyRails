@@ -1,4 +1,4 @@
-<%= link_to 'Novo', action: 'new' %>
+<%= link_to 'Novo', {action: 'new'},class: "btn btn-success" %>
 <table class="table table-bordered">
 	<tr>
 		<th>Nome</th>
@@ -11,10 +11,10 @@
 		<td><%= restaurante.nome          %></td>
 		<td><%= restaurante.endereco      %></td>
 		<td><%= restaurante.especialidade %></td>
-		<td> <%= link_to 'Mostrar', action: 'show', id: restaurante,class: "btn btn-primary" %>
-		<%= link_to 'Editar', action: 'edit', id: restaurante %>
+		<td> <%= link_to 'Mostrar', {action: 'show', id: restaurante},class: "btn btn-default" %>
+		<%= link_to 'Editar', {action: 'edit', id: restaurante},  class: "btn btn-primary" %>
 		<%= link_to 'Deletar', {action: 'destroy', id: restaurante},
-		{method: "delete"}  %> </td>
+		{method: "delete",class: "btn btn-danger"} %> </td>
 	</tr>
 	<% end %>
 </table>

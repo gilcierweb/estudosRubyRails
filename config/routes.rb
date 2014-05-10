@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :qualificacoes
+
+  resources :clientes
+
   get 'welcome/index'
   get 'teste/form'
   get 'teste/index'
@@ -68,11 +72,19 @@ end
 
 =begin
 MyApp2::Application.routes.draw do
+  resources :qualificacoes
+
+  resources :clientes
+
 match 'inicio', controller: 'restaurantes', action: 'index', via: 'get'
 #match 'inicio' => 'restaurantes#index', via: 'get'
 end
 
 myapp2::Application.routes.draw do
+  resources :qualificacoes
+
+  resources :clientes
+
 match 'ola' => 'ola_mundo#index', via: 'get'
 end
 

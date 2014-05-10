@@ -1,0 +1,21 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<p>
+	<strong>Cliente:</strong>
+	<%= @qualificacao.cliente.nome %>
+</p>
+
+<p>
+	<strong>Restaurante:</strong>
+	<%= @qualificacao.restaurante.nome %>
+</p>
+
+<p>
+	<strong>Nota:</strong>
+	<%= @qualificacao.nota %>
+</p>
+
+<%= link_to 'Edit', edit_qualificacao_path(@qualificacao) %> |
+<%= link_to 'Back', qualificacoes_path %>
