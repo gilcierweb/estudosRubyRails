@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504220004) do
+ActiveRecord::Schema.define(version: 20140511171705) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome",       limit: 80
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20140504220004) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "comentarios", force: true do |t|
+    t.text     "conteudo"
+    t.integer  "comentavel_id"
+    t.string   "comentavel_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comentarios", ["comentavel_id"], name: "index_comentarios_on_comentavel_id", using: :btree
+  add_index "comentarios", ["comentavel_type"], name: "index_comentarios_on_comentavel_type", using: :btree
 
   create_table "pratos", force: true do |t|
     t.string   "nome",       limit: 80

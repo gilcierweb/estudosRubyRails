@@ -15,6 +15,12 @@ class QualificacoesController < ApplicationController
   def new
     preparar_form
     @qualificacao = Qualificacao.new
+    if params[:cliente]
+      @qualificacao.cliente = Cliente.find(params[:cliente])
+    end
+    if params[:restaurante]
+      @qualificacao.restaurante = Restaurante.find(params[:restaurante])
+    end
   end
 
   # GET /qualificacoes/1/edit
@@ -75,8 +81,9 @@ class QualificacoesController < ApplicationController
   def qualificacao_params
     params.require(:qualificacao).permit(:cliente_id, :restaurante_id, :nota, :valor_gasto)
   end
-  
+
   private
+
   def preparar_form
     @clientes = Cliente.order :nome
     @restaurantes = Restaurante.order :nome

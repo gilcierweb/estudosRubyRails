@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :comentarios
+
   resources :qualificacoes
 
   resources :clientes
@@ -72,6 +74,8 @@ end
 
 =begin
 MyApp2::Application.routes.draw do
+  resources :comentarios
+
   resources :qualificacoes
 
   resources :clientes
@@ -81,6 +85,8 @@ match 'inicio', controller: 'restaurantes', action: 'index', via: 'get'
 end
 
 myapp2::Application.routes.draw do
+  resources :comentarios
+
   resources :qualificacoes
 
   resources :clientes
