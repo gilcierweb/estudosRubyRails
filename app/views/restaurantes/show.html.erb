@@ -17,6 +17,14 @@
 <b>Nota média: </b><%= @restaurante.qualificacoes.average(:nota) %><br />
 <b>Qualificações: </b><%= @restaurante.qualificacoes.count %><br />
 <b>Preço médio: </b><%= @restaurante.qualificacoes.average(:valor_gasto) %><br />
-<%= novo_comentario(@restaurante) %><br /><br />
+<p>
+  <b>Foto:</b>
+    <%= image_tag @restaurante.foto.url(:thumb) %>
+</p>
+
+<%= comentarios(@restaurante) %><br />
+
+<%= novo_comentario(@restaurante) %><br />
+
 <%= link_to 'Editar', {action: 'edit', id: @restaurante}, class: "btn btn-primary" %>
 <%= link_to 'Voltar', {action: 'index'} ,class: "btn btn-default"%>

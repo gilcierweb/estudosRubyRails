@@ -4,10 +4,11 @@
 <% end %>
 </ul>
 
-<%= form_for @restaurante do |f| %>
+<%= form_for @restaurante, html: {multipart: true} do |f| %>
   Nome: <%= f.text_field :nome %><br/>
   Endereço: <%= f.text_field :endereco %><br/>
   Especialidade: <%= f.text_field :especialidade %><br/>
+  Foto: <%= f.file_field :foto %>
   <%= f.submit %>
 <% end %>
 <%= link_to "Qualificar este restaurante", controller: "qualificacoes",

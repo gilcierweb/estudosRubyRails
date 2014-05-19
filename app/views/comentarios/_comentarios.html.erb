@@ -1,0 +1,11 @@
+<% content_for :css do %>
+  <link rel="stylesheet" href="/assets/comentarios.css">
+<% end %>
+<div id="comentarios">
+  <h3>Comentários</h3>
+  <% if comentarios.empty? %>
+    Nenhum comentário
+  <% else %>
+    <%= render comentarios %>
+  <% end %>
+</div>

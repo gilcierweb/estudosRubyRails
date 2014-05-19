@@ -2,7 +2,7 @@ class RestaurantesController < ApplicationController
   respond_to :html, :xml, :json
   
   def index
-    @restaurantes = Restaurante.order('id desc')
+    @restaurantes = Restaurante.order('id desc').page(params['page']).per(10)
     respond_with @restaurantes
   end
 
@@ -45,6 +45,6 @@ class RestaurantesController < ApplicationController
   end
 
   def restaurante_params
-    params.require(:restaurante).permit(:nome, :endereco, :especialidade)
+    params.require(:restaurante).permit(:nome, :endereco, :especialidade, :foto)
   end
 end

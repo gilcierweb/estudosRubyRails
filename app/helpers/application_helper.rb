@@ -5,8 +5,17 @@ module ApplicationHelper
     separator: ",",
     delimiter: "."
   end
-   def novo_comentario(comentavel)
-   render partial: "comentarios/novo_comentario",
+
+  def novo_comentario(comentavel)
+    render partial: "comentarios/novo_comentario",
           locals: {comentavel: comentavel}
- end
+  end
+
+  def comentarios(comentavel)
+    render partial: "comentarios/comentarios",
+     locals: {comentarios: comentavel.comentarios}
+  end
+  def menu_principal(controllers)
+  render partial: "layouts/menu_principal", locals: {opcoes: controllers}
+end
 end

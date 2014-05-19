@@ -5,7 +5,9 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<%= stylesheet_link_tag   '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag   '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css','//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css', 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= yield :css %>
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,7 +19,7 @@
     </head>
     <body>
 
-      <%= render 'layouts/menu' %>
+      <%= render  partial: 'layouts/menu', locals: {opcoes: %w(restaurantes clientes qualificacoes)} %>     
       
       <div class="container">
         <div class="row">
@@ -34,7 +36,7 @@
          <%= yield %>
 
          <footer>
-           <p>&copy; GilcierWeb Rails - <%= Time.new.year %> - <a href="http://gilcierweb.com.br" target="_blank">gilcierweb.com.br</a><p>
+           <p>Copyright &copy; GilcierWeb Rails - <%= Time.new.year %> - <a href="http://gilcierweb.com.br" target="_blank">gilcierweb.com.br</a><p>
            </footer>
 
          </div>		
@@ -43,5 +45,9 @@
 
      <!-- Script -->
      <%= javascript_include_tag  'application','//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js', 'data-turbolinks-track' => true %>
+     <script type="text/javascript">
+       <%= yield :js %>
+     </script>
+
    </body>
    </html>

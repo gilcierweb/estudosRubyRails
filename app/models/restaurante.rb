@@ -5,6 +5,8 @@ class Restaurante < ActiveRecord::Base
   has_and_belongs_to_many :pratos
   has_many :comentarios, as: :comentavel
 
+  #paginates_per 10
+
   validates_presence_of :nome, message: "deve ser preenchido"
   validates_presence_of :endereco, message: "deve ser preenchido"
   validates_presence_of :especialidade, message: "deve ser preenchido"
@@ -16,4 +18,11 @@ class Restaurante < ActiveRecord::Base
 #   errors.add(:nome,
 #       "primeira letra deve ser maiúscula") unless nome =~ /[A-Z].*/
 # end
+
+has_attached_file :foto, styles: {
+  medium: "300x300>",
+  thumb: "100x100>",
+  original: "800x600>"
+}
+
 end

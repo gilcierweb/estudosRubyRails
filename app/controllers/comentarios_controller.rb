@@ -28,8 +28,9 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
-        format.json { render :show, status: :created, location: @comentario }
+         format.js
+        # format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
+        # format.json { render :show, status: :created, location: @comentario }
       else
         format.html { render :new }
         format.json { render json: @comentario.errors, status: :unprocessable_entity }
@@ -55,10 +56,14 @@ class ComentariosController < ApplicationController
   # DELETE /comentarios/1.json
   def destroy
     @comentario.destroy
+
     respond_to do |format|
-      format.html { redirect_to comentarios_url, notice: 'Comentario was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     format.js { head :ok }
+   end
+    #respond_to do |format|
+     # format.html { redirect_to comentarios_url, notice: 'Comentario was successfully destroyed.' }
+      #format.json { head :no_content }
+   # end
   end
 
   private
