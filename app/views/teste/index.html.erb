@@ -1,2 +1,12 @@
 <h1>Teste#index</h1>
-<p>Find me in app/views/teste/index.html.erb</p>
+<p>
+	Find me in app/views/teste/index.html.erb
+</p>
+<h4>Session</h4> <%= debug(session) %> <h4>Params</h4>
+<%= debug(params) %>
+<h4>Response</h4> <%= debug(response) %>
+<br />
+<% for file in @files %>
+file name is: <%= file %>
+<br />
+<% end %>

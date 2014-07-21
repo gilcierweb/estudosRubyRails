@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+  get 'dashboard/index'
+  end
+
   resources :comentarios
 
   resources :qualificacoes
@@ -9,6 +13,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'teste/form'
   get 'teste/index'
+  get 'teste/stream'
+ # get 'teste/download_pdf/:id'
+   get ':controller(/:action(/:id(.:format)))'
   get 'ola/index'
   post ':controller(/:action(/:id(.:format)))'
 
@@ -74,6 +81,10 @@ end
 
 =begin
 MyApp2::Application.routes.draw do
+  namespace :admin do
+  get 'dashboard/index'
+  end
+
   resources :comentarios
 
   resources :qualificacoes
@@ -85,6 +96,10 @@ match 'inicio', controller: 'restaurantes', action: 'index', via: 'get'
 end
 
 myapp2::Application.routes.draw do
+  namespace :admin do
+  get 'dashboard/index'
+  end
+
   resources :comentarios
 
   resources :qualificacoes
